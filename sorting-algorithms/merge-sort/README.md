@@ -47,7 +47,7 @@ As we move up the recursive call stack, we call the `merge()` helper function to
 
 ## Implementation (Python)
 
-```
+```python
 # Helper function for merging sorted subarrays
 def merge(left, right):
     # Result array to store merged values
@@ -79,7 +79,7 @@ def merge(left, right):
 def merge_sort(arr):
     # Base case for recursion: length of arr == 1 or 0
     if len(arr) <= 1:
-        return arr;
+        return arr
 
     # Determine middle index for splitting into smaller subarrays
     mid = len(arr) // 2
@@ -95,3 +95,7 @@ def merge_sort(arr):
     # Merge sorted left and right subarrays as we move up the recursive call stack
     return merge(sorted_left, sorted_right)
 ```
+
+## References
+
+- [GeeksForGeeks Merge Sort – Data Structure and Algorithms Tutorials](https://www.geeksforgeeks.org/merge-sort/?ref=header_outind#illustration-of-merge-sort)
