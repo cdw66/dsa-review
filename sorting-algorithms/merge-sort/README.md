@@ -6,16 +6,16 @@ In simple terms, **Merge Sort** works by dividing an array in half, sorting each
 
 Here are the steps that **Merge Sort** follows to sort an array:
 
-1. _Divide_: Divide the array recursively in two halves until it can't be divided any further (down to the base case)
-2. _Conquer_: Sort each subarray individually using the merge sort algorithm
-3. _Merge_: Merge the sorted subarrays back together in sorted order. The process continues up the recursive call stack until all of the subarrays have been merged, resulting in the final sorted array.
+1. **Divide**: Divide the array recursively in two halves until it can't be divided any further (down to the base case)
+2. **Conquer**: Sort each subarray individually using the merge sort algorithm
+3. **Merge**: Merge the sorted subarrays back together in sorted order. The process continues up the recursive call stack until all of the subarrays have been merged, resulting in the final sorted array.
 
 ## Time & Space Complexity
 
 | Complexity       | Big O Notation |
 | ---------------- | -------------- |
-| Time Complexity  | O(n log(n))    |
-| Space Complexity | O(n)           |
+| Time Complexity  | $O(n\ log(n))$ |
+| Space Complexity | $O(n)$         |
 
 ## Example
 

@@ -8,8 +8,8 @@ This makes **Bubble Sort** inefficient at sorting large datasets, but it is easy
 
 | Complexity       | Big O Notation |
 | ---------------- | -------------- |
-| Time Complexity  | O(n^2)         |
-| Space Complexity | O(1)           |
+| Time Complexity  | $O(n^2)$       |
+| Space Complexity | $O(1)$         |
 
 ## Example
 
@@ -41,7 +41,7 @@ With our array sorted like this: `[2, 8, 11, 14]`, **Bubble Sort** performs one 
 
 ## Implementation (Python)
 
-```
+```python
 def bubbleSort(arr):
     n = len(arr)
 
