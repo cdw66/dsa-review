@@ -1,19 +1,19 @@
 # Bubble Sort
 
-_Bubble Sort_ is a simple sorting algorithm that works by swapping adjacent elements if they are in the wrong order. The algorithm performs multiple passes over the array, building up a partition of sorted elements at the end of the array, until all of the elements are in order. In this way, the largest elements "bubble" their way up to the end of the array, which is how _Bubble Sort_ gets its name.
+**Bubble Sort** is a simple sorting algorithm that works by swapping adjacent elements if they are in the wrong order. The algorithm performs multiple passes over the array, building up a partition of sorted elements at the end of the array, until all of the elements are in order. In this way, the largest elements "bubble" their way up to the end of the array, which is how **Bubble Sort** gets its name.
 
-This makes _Bubble Sort_ inefficient at sorting large datasets, but it is easy to understand and implement.
+This makes **Bubble Sort** inefficient at sorting large datasets, but it is easy to understand and implement.
 
 ## Time & Space Complexity
 
 | Complexity       | Big O Notation |
 | ---------------- | -------------- |
-| Time Complexity  | O(n^2^)        |
+| Time Complexity  | O(n^2)         |
 | Space Complexity | O(1)           |
 
 ## Example
 
-Let's use _Bubble Sort_ to sort the following array: `[14, 8, 11, 2]`
+Let's use **Bubble Sort** to sort the following array: `[14, 8, 11, 2]`
 
 ### First Iteration
 
@@ -33,11 +33,11 @@ Since we know that the last `n-i-1` elements of the array are in order, we can s
 
 ### Third Iteration
 
-Our array is almost sorted, so let's perform another pass. Starting with `[8, 2, 11, 14]`, we compare the first two elements: `[|8, 2|, 11, 14]`. `8` is greater than `2`, so we swap the elements to get `[2, 8, 11, 14]`. Since we already know the last `i` elements are sorted, we can stop here for this iteration. Our array is now in order, but _Bubble Sort_ will still perform one final pass.
+Our array is almost sorted, so let's perform another pass. Starting with `[8, 2, 11, 14]`, we compare the first two elements: `[|8, 2|, 11, 14]`. `8` is greater than `2`, so we swap the elements to get `[2, 8, 11, 14]`. Since we already know the last `i` elements are sorted, we can stop here for this iteration. Our array is now in order, but **Bubble Sort** will still perform one final pass.
 
 ### Fourth Iteration
 
-With our array sorted like this: `[2, 8, 11, 14]`, _Bubble Sort_ performs one final pass to ensure our elements are in order. We start by comparing the first two elements again: `[|2, 8|, 11, 14]`. Since `2` is less than `8`, our loop exits and the _Bubble Sort_ is complete. Now, `arr = [2, 8, 11, 14]`.
+With our array sorted like this: `[2, 8, 11, 14]`, **Bubble Sort** performs one final pass to ensure our elements are in order. We start by comparing the first two elements again: `[|2, 8|, 11, 14]`. Since `2` is less than `8`, our loop exits and the **Bubble Sort** is complete. Now, `arr = [2, 8, 11, 14]`.
 
 ## Implementation (Python)
 

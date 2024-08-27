@@ -1,4 +1,4 @@
-def bubbleSort(arr):
+def bubble_sort(arr):
     n = len(arr)
 
     # Traverse array elements
@@ -21,7 +21,7 @@ def bubbleSort(arr):
 if __name__ == "__main__":
     arr = [64, 34, 25, 12, 22, 11, 90]
     
-    bubbleSort(arr)
+    bubble_sort(arr)
 
     print("Sorted array:")
     for i in range(len(arr)):
