@@ -1,6 +1,6 @@
 # Quick Sort
 
-**Quick Sort** is a highly-efficient sorting algorithm that uses the divide-and-conquer approach to sort elements. Unlike **Merge Sort**, which divides the array into halves, Quick Sort works by selecting a "pivot" element and partitioning the array around this pivot, placing elements less than the pivot to its left and elements greater than the pivot to its right. This partitioning process is repeated recursively on each subarray until the entire array is sorted.
+**Quick Sort** is a highly-efficient sorting algorithm that uses the divide-and-conquer approach to sort elements. Unlike **Merge Sort**, which divides the array into halves, **Quick Sort** works by selecting a "pivot" element and partitioning the array around this pivot, placing elements less than the pivot to its left and elements greater than the pivot to its right. This partitioning process is repeated recursively on each subarray until the entire array is sorted.
 
 Here are the steps that **Quick Sort** follows to sort an array:
 
