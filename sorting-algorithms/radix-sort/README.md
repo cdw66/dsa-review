@@ -29,27 +29,29 @@ Let's use **Radix Sort** to sort the array `arr = [170, 45, 75, 90, 802, 24, 2, 
 
 Find the largest element in the array, which is `802`. It has three digits, so we will perform three passes of **Radix Sort**, one pass for each significant digit.
 
+![Radix Sort Step 1](./img/rs1.png)
+
 ### Step 2: Sort by Unit Place Digits
 
-Sort the elements based on the LSD (the unit place) using a stable sorting technique, such as **Counting Sort**. Note that the default implementation of **Counting Sort** is unstable, but we can solve this problem by iterating over `arr` in reverse order to build the output array. This allows us to keep the keys in the same order as they appear in `arr`.
+Sort the elements based on the LSD (the unit place) using a stable sorting technique, such as **Counting Sort**. This allows us to keep the keys in the same order as they appear in `arr`.
 
 After performing **Counting Sort** on the unit place digits, the resulting array is `[170, 90, 802, 2, 24, 45, 75, 66]`.
 
-![]()
+![Radix Sort Step 2](./img/rs2.png)
 
 ### Step 3: Sort by Tens Place Digits
 
 Next, we perform **Counting Sort** on the tens place digits. The resulting array from this operation is `[802, 2, 24, 45, 66, 170, 75, 90]`.
 
-**Note**: Elements that don't have a number in the tens place use `0` as a placeholder, e.g. the element `2` should be treated as `02`.
+**Note**: Elements that don't have a number in the tens place use `0` as a placeholder, e.g. the element `2` should be treated as `02`. The same goes for later iterations of **Radix Sort** as we move on to greater significant digits.
 
-![]()
+![Radix Sort Step 3](./img/rs3.png)
 
 ### Step 4: Sort by Hundreds Place Digits
 
 Finally, we perform the final pass of **Counting Sort** on the hundreds place digits to obtain the sorted array. The final sorted array is `[2, 24, 45, 66, 75, 90, 170, 802]`.
 
-![]()
+![Radix Sort Step 4](./img/rs4.png)
 
 ## Implementation
 
