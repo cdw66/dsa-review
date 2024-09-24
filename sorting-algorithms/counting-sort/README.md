@@ -47,7 +47,7 @@ Now, we have to iterate over the input array and count the occurences of each el
 
 ### Step 4. Accumulate Counts
 
-After counting the occurrences of each value, we must update the count array to contain the cumulative counts. After doing this, the count array will look like this: `count = [1, 3, 5, 6, 6, 6, 6, 7]`. Now, the value at each index shows where the corresponding element should go in the output array. In other words, we determine each digit's starting position by counting how many cells are taken up by the digits before it, and update the `count` array to reflect this.
+After counting the occurrences of each value, we must update the count array to contain the cumulative counts. After doing this, the count array will look like this: `count = [0, 1, 3, 5, 6, 6, 6, 6, 7]`. Now, the value at each index shows where the corresponding element should go in the output array. In other words, we determine each digit's starting position by counting how many cells are taken up by the digits before it, and update the `count` array to reflect this.
 
 ![Counting Sort Step 4](./img/cs4.png)
 
