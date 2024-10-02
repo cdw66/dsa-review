@@ -25,10 +25,21 @@
 
 Let's use **Linear Search** to find the element `7` in the array `arr = [3, 8, 1, 7, 9, 2]`.
 
-1. **First Element**: Compare the first element `3` with the target element `7` - Not a match, move on to the next element.
-2. **Second Element**: Compare the next element `8` with `7` - Not a match, move on to the next element.
-3. **Third Element**: Compare the next element `1` with `7` - Not a match, move on to the next element.
-4. **Fourth Element**: Compare the next element `7` with `7` - Match found, stop iterating and return the current index, `3`.
+### First Element
+
+Compare the first element `3` with the target element `7` - Not a match, move on to the next element.
+
+### Second Element
+
+Compare the next element `8` with `7` - Not a match, move on to the next element.
+
+### Third Element
+
+Compare the next element `1` with `7` - Not a match, move on to the next element.
+
+### Fourth Element
+
+Compare the next element `7` with `7` - Match found, stop iterating and return the current index, `3`.
 
 In this example, **Linear Search** returns `3`, because we found it at position `arr[3]`.
 
