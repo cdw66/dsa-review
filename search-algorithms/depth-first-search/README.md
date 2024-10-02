@@ -136,7 +136,7 @@ Let's perform a post-order traversal on the same tree as in the previous example
 
    ![DFS Post-Order Step 9](./img/post-order/dfs-postorder-9.png)
 
-### Recursive Implementation - Pre-order Traversal (Python)
+### Recursive Implementations (Python)
 
 ```python
 class TreeNode:
@@ -159,44 +159,103 @@ def dfs_preorder_recursive(node):
     # Recursively visit the right subtree
     dfs_preorder_recursive(node.right)
 
-# Example usage
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-root.left.left = TreeNode(4)
-root.left.right = TreeNode(5)
+# Recursive DFS (In-order Traversal)
+def dfs_inorder_recursive(node):
+    if node is None:
+        return
 
-dfs_preorder_recursive(root)  # Output: 1 2 4 5 3
+    # Recursively visit the left subtree
+    dfs_inorder_recursive(node.left)
+
+    # Visit the root
+    print(node.value, end=' ')
+
+    # Recursively visit the right subtree
+    dfs_inorder_recursive(node.right)
+
+# Recursive DFS (Post-order Traversal)
+def dfs_postorder_recursive(node):
+    if node is None:
+        return
+
+    # Recursively visit the left subtree
+    dfs_postorder_recursive(node.left)
+
+    # Recursively visit the right subtree
+    dfs_postorder_recursive(node.right)
+
+    # Visit the root
+    print(node.value, end=' ')
 ```
 
-### Iterative Implementation - Pre-order Traversal (Python)
+### Iterative Implementations (Python)
 
 ```python
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
 # Iterative DFS (Pre-order Traversal)
 def dfs_preorder_iterative(root):
     if root is None:
         return
 
-    # Stack to keep track of nodes
     stack = [root]
 
     while stack:
-        # Pop the top node
         node = stack.pop()
-
-        # Visit the node
         print(node.value, end=' ')
 
-        # Push the right child first (so left is processed first)
+        # Push right child first, so that left is processed first
         if node.right:
             stack.append(node.right)
-
-        # Push the left child to be processed next
         if node.left:
             stack.append(node.left)
 
-# Example usage
-dfs_preorder_iterative(root)  # Output: 1 2 4 5 3
+# Iterative DFS (In-order Traversal)
+def dfs_inorder_iterative(root):
+    if root is None:
+        return
+
+    stack = []
+    current = root
+
+    while current is not None or stack:
+        # Reach the leftmost node of the current node
+        while current is not None:
+            stack.append(current)
+            current = current.left
+
+        # Current is None, so we pop the top element
+        current = stack.pop()
+        print(current.value, end=' ')
+
+        # We now visit the right subtree
+        current = current.right
+
+# Iterative DFS (Post-order Traversal)
+def dfs_postorder_iterative(root):
+    if root is None:
+        return
+
+    stack = []
+    result = []  # Use a result list to store the post-order sequence
+    stack.append(root)
+
+    while stack:
+        node = stack.pop()
+        result.append(node.value)
+
+        # Push left child first, so that right is processed first
+        if node.left:
+            stack.append(node.left)
+        if node.right:
+            stack.append(node.right)
+
+    # The result is in reverse post-order, so we reverse it before printing
+    print(' '.join(map(str, result[::-1])))
 ```
 
 ## DFS for Graph Traversal
@@ -256,6 +315,17 @@ def dfs_recursive(graph, node, visited=None):
     for neighbor in graph[node]:
         if neighbor not in visited:
             dfs_recursive(graph, neighbor, visited)
+
+# Example usage
+graph = {
+    0: [1, 2],
+    1: [3],
+    2: [4],
+    3: [],
+    4: []
+}
+
+dfs_recursive(graph, 0)  # Output: 0 1 3 2 4
 ```
 
 The recursive implementation of **DFS** is typically more intuitive and easier to implement but may run into issues with deep recursion due to stack overflow if the graph is very large.
@@ -278,6 +348,17 @@ def dfs_iterative(graph, start):
             for neighbor in reversed(graph[node]):
                 if neighbor not in visited:
                     stack.append(neighbor)
+
+# Example usage
+graph = {
+    0: [1, 2],
+    1: [3],
+    2: [4],
+    3: [],
+    4: []
+}
+
+dfs_iterative(graph, 0)  # Output: 0 1 3 2 4
 ```
 
 The iterative implementation of **DFS** uses an explicit stack instead of recursion, which avoids recursion depth issues and can be more flexible in certain cases.
