@@ -6,11 +6,11 @@
 
 1. **Start at the Root (or a Chosen Node)**: Begin at the root node (or any arbitrary node) of the graph or tree.
 
-2. **Mark the Node as Visited (If Traversing a Graph)**: Once a node is visited, mark it as visited to avoid revisiting it. In graphs, this prevents cycles from being traversed multiple times.
+2. **Mark the Node as Visited**: Once a node is visited, mark it to avoid revisiting it. This is especially important in graphs to prevent cycles from being traversed multiple times, but in any traversal, marking nodes helps ensure they aren’t reprocessed.
 
-3. **Explore the Adjacent Nodes**: Recursively explore each of the node's unvisited adjacent nodes (or children in the case of trees)by diving deep along one path. For each adjacent node, apply **DFS** recursively.
+3. **Explore the Adjacent Nodes**: Recursively explore each of the node's unvisited adjacent nodes (or children in the case of trees) by diving deep along one path. For each adjacent node, apply **DFS** recursively.
 
-4. **Backtrack**: If a node has no unvisited adjacent nodes, backtrack to the previous node and explore any unvisited nodes along that path.
+4. **Backtrack**: If a node has no unvisited adjacent nodes, backtrack to the previous node and explore any unvisited nodes along that path. Backtracking ensures that DFS thoroughly explores every possible path before considering the next one.
 
 5. **Repeat Until All Nodes are Visited**: The process repeats until all reachable nodes from the starting point have been visited.
 
@@ -34,7 +34,7 @@ In tree traversal, **DFS** is used to explore each node by diving deep into one 
 
 1. **In-order Traversal**: Recursively visit the left subtree, then visit the root, and finally the right subtree. For the tree above, in-order traversal will visit the nodes in this order: `4 2 5 1 3`.
 
-2. **Pre-order Traversal**: Visit the root first, then recursively visit the left subtree, followed by the right subtree. For the three shown above, pre-order traversal will visit the nodes in this order: `1 2 4 5 3`.
+2. **Pre-order Traversal**: Visit the root first, then recursively visit the left subtree, followed by the right subtree. For the tree shown above, pre-order traversal will visit the nodes in this order: `1 2 4 5 3`.
 
 3. **Post-order Traversal**: Recursively visit the left subtree, then the right subtree, and visit the root last. For the tree above, post-order traversal will visit the nodes in this order: `4 5 2 3 1`.
 
@@ -108,7 +108,7 @@ Let's perform a post-order traversal on the same tree as in the previous example
 
    ![DFS Post-Order Step 2](./img/post-order/dfs-postorder-2.png)
 
-3. The left child of `2` is `4`, which has no children, so we visit this node and backtrack to its parent node `2`.
+3. The left child of `2` is `4`, which has no children, so we visit this node and then backtrack to its parent node `2`.
 
    ![DFS Post-Order Step 3](./img/post-order/dfs-postorder-3.png)
 
@@ -264,7 +264,7 @@ def dfs_postorder_iterative(root):
 
 ![DFS graph](./img/dfs-graph.png)
 
-Let's use **DFS** to traverse the graph shown above, which can also be represented using an adjacency list, which maps nodes in the graph to their adjacent nodes, as shown below.
+Let's use **DFS** to traverse the graph shown above, which can also be represented using an adjacency list, which maps nodes in the graph to their adjacent nodes, as shown below. For the sake of this example, let's start at node `1`.
 
 ```python
 graph = {
